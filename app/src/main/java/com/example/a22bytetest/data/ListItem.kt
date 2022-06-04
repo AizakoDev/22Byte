@@ -1,4 +1,4 @@
-package com.example.a22bytetest
+package com.example.a22bytetest.data
 
 data class ListItem(
     val source: Source,

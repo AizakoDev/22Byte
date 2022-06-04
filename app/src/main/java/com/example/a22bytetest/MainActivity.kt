@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.a22bytetest.data.ListItem
 import com.example.a22bytetest.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         val serviceGenerator = ServiceGenerator.buildService(NewsApiService::class.java)
-        val call = serviceGenerator.getHeadLines()
+        val call = serviceGenerator.getHeadLines("ru", "sports", "q", getString(R.string.api_key))
 
         call.enqueue(object : retrofit2.Callback<MutableList<ListItem>>{
             override fun onResponse(call: Call<MutableList<ListItem>>, response: Response<MutableList<ListItem>>) {

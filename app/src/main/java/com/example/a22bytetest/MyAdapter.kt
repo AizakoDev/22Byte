@@ -1,11 +1,12 @@
 package com.example.a22bytetest
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a22bytetest.data.ListItem
 import com.example.a22bytetest.databinding.RecyclerItemBinding
+import com.squareup.picasso.Picasso
 
 class MyAdapter(val listItems: MutableList<ListItem>) : RecyclerView.Adapter<MyAdapter.MyHolder>() {
 //    val listItems = ArrayList<ListItem>()
@@ -15,7 +16,7 @@ class MyAdapter(val listItems: MutableList<ListItem>) : RecyclerView.Adapter<MyA
 
         fun bind(listItem: ListItem) = with(vb) {
             textViewTitle.text = listItem.title
-            textViewSource.text = listItem.description
+            textViewSource.text = listItem.source.name
 
             itemView.setOnClickListener{
                 //todo
@@ -30,6 +31,9 @@ class MyAdapter(val listItems: MutableList<ListItem>) : RecyclerView.Adapter<MyA
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         holder.bind(listItems[position])
+        if(listItems[position].urlToImage !=null){
+            Picasso.get().load(listItems[position].urlToImage).into(holder.vb.imageViewHeadline)
+        }
     }
 
     override fun getItemCount(): Int {

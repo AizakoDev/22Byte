@@ -47,4 +47,7 @@ dependencies {
     //retrofit+gson
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //picasso - для картинок
+    implementation 'com.squareup.picasso:picasso:2.8'
 }
