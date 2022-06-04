@@ -14,8 +14,8 @@ class MyAdapter(val listItems: MutableList<ListItem>) : RecyclerView.Adapter<MyA
         val vb = RecyclerItemBinding.bind(item)
 
         fun bind(listItem: ListItem) = with(vb) {
-            textViewTitle.text = listItem.id
-            textViewDescription.text = listItem.body
+            textViewTitle.text = listItem.title
+            textViewSource.text = listItem.description
 
             itemView.setOnClickListener{
                 //todo

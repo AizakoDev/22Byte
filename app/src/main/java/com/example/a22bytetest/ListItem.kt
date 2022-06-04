@@ -1,8 +1,12 @@
 package com.example.a22bytetest
 
 data class ListItem(
-    var userId: String? = null,
-    var id: String? = null,
-    var title: String? = null,
-    var body: String? = null
+    val source: Source,
+    var author: String,
+    var title: String,
+    var description: String,
+    var url: String,
+    var urlToImage: String,
+    var publishedAt: String,
+    var content: String
 )
