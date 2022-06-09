@@ -20,22 +20,27 @@ class MainActivity : AppCompatActivity() {
         val view = vb.root
         setContentView(view)
 
-        val serviceGenerator = ServiceGenerator.buildService(NewsApiService::class.java)
-        val call = serviceGenerator.getHeadLines("ru", "sports", "q", getString(R.string.api_key))
 
-        call.enqueue(object : retrofit2.Callback<MutableList<ListItem>>{
-            override fun onResponse(call: Call<MutableList<ListItem>>, response: Response<MutableList<ListItem>>) {
-                if (response.isSuccessful){
-                    vb.recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-                    vb.recyclerView.adapter = MyAdapter(response.body()!!)
-                }
-            }
-            override fun onFailure(call: Call<MutableList<ListItem>>, t: Throwable) {
-                t.printStackTrace()
-                Log.e("error", t.message.toString())
-            }
 
-        })
+
+//        val serviceGenerator = ServiceGenerator.buildService(NewsApiService::class.java)
+//        val call = serviceGenerator.getHeadLines("ru", "sports", "q", getString(R.string.api_key))
+//
+//        call.enqueue(object : retrofit2.Callback<MutableList<ListItem>>{
+//            override fun onResponse(call: Call<MutableList<ListItem>>, response: Response<MutableList<ListItem>>) {
+//                if (response.isSuccessful){
+//                    vb.recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+//                    vb.recyclerView.adapter = MyAdapter(response.body()!!)
+//                }
+//            }
+//            override fun onFailure(call: Call<MutableList<ListItem>>, t: Throwable) {
+//                t.printStackTrace()
+//                Log.e("error", t.message.toString())
+//            }
+//
+//        })
+
+
     }
 
 

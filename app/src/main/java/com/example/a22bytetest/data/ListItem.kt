@@ -1,7 +1,7 @@
 package com.example.a22bytetest.data
 
 data class ListItem(
-    val source: Source,
+    val source: Source? = null,
     var author: String,
     var title: String,
     var description: String,
